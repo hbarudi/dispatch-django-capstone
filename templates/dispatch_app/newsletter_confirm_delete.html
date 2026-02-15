@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Delete Newsletter - Dispatch{% endblock %}
+
+{% block content %}
+<section class="card" style="max-width: 600px; margin: 40px auto;">
+    <header>
+        <h2 style="margin-top: 0;">Delete Newsletter</h2>
+        <p style="color: #BF6000;">
+            Are you sure you want to delete <strong>{{ object.title }}</strong>?
+        </p>
+        <hr>
+    </header>
+    <form method="post">
+        {% csrf_token %}
+        <footer style="margin-top: 20px;">
+            <button type="submit" class="btn"
+                    style="background-color: #800000; color: #FFFF00;">
+                Yes, delete
+            </button>
+            <a href="{% url 'newsletter_list' %}" class="btn">Cancel</a>
+        </footer>
+    </form>
+</section>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Write Newsletter - Dispatch{% endblock %}
+
+{% block content %}
+    <section class="card">
+        <header>
+            <h2>Publish a New Newsletter</h2>
+            <p style="color: #BF6000;">This will be visible to all your subscribers immediately.</p>
+            <hr>
+        </header>
+
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <footer style="margin-top: 20px;">
+                <button type="submit" class="btn">Publish Newsletter</button>
+                <a href="{% url 'journalist_dashboard' %}" class="btn"
+                   style="background-color: #593000;">Cancel</a>
+            </footer>
+        </form>
+    </section>
+{% endblock %}

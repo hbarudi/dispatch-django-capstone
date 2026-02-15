@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Login - Dispatch Django{% endblock %}
+
+{% block content %}
+    <section class="card" style="max-width: 500px; margin: 40px auto;">
+        <header>
+            <h2 style="margin-top: 0;">Log In</h2>
+            <hr>
+        </header>
+
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <footer style="margin-top: 20px;">
+                <button type="submit" class="btn">Login</button>
+            </footer>
+        </form>
+
+        <section style="margin-top: 25px; border-top: 1px solid #BF6000;
+                    padding-top: 15px;">
+            <p>New to Dispatch?
+                <a href="{% url 'register' %}" style="font-weight: bold;">
+                    Create an account
+                </a>
+            </p>
+        </section>
+    </section>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}Editor Dashboard - Dispatch{% endblock %}
+
+{% block content %}
+    <header>
+        <h2>Editor Review Queue</h2>
+        <p style="color: #BF6000;">Articles pending approval for publication.</p>
+        <hr>
+    </header>
+
+    <section>
+        {% for article in pending_articles %}
+            <article class="card">
+                <header style="display: flex; justify-content: space-between;
+                            align-items: start;">
+                    <section>
+                        <h3 style="margin: 0;">{{ article.title }}</h3>
+                        <p style="margin: 5px 0; font-size: 0.9rem; color: #BF6000;">
+                            Author: <strong>{{ article.author.username }}</strong> |
+                            Source: <strong>{{ article.publisher.name|default:"Independent" }}</strong>
+                        </p>
+                    </section>
+                </header>
+                <p style="margin-top: 15px;">{{ article.content|truncatewords:30 }}</p>
+                <footer style="margin-top: 20px;">
+                    <a href="{% url 'article_detail' article.id %}" class="btn">Review Full Text</a>
+
+                    <form action="{% url 'approve_article' article.id %}"
+                          method="post" style="display: inline;">
+                        {% csrf_token %}
+                        <button type="submit" class="btn">Approve & Publish</button>
+                    </form>
+                </footer>
+            </article>
+        {% empty %}
+            <section class="card">
+                <p>The queue is currently empty. No articles are pending review.</p>
+            </section>
+        {% endfor %}
+    </section>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Register - Dispatch Django{% endblock %}
+
+{% block content %}
+    <section class="card" style="max-width: 600px; margin: 40px auto;">
+        <header>
+            <h2 style="margin-top: 0;">Create Your Account</h2>
+            <p style="color: #BF6000;">Join our community of readers and journalists</p>
+            <hr>
+        </header>
+
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <footer style="margin-top: 20px;">
+                <button type="submit" class="btn">Register</button>
+            </footer>
+        </form>
+
+        <section style="margin-top: 25px; border-top: 1px solid #BF6000;
+                    padding-top: 15px;">
+            <p>Already have an account?
+                <a href="{% url 'login' %}" style="font-weight: bold;">
+                    Sign in here
+                </a>
+            </p>
+        </section>
+    </section>
+{% endblock %}

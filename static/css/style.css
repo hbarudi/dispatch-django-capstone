@@ -1,0 +1,180 @@
+/*
+DispatchDjango Theme (VendorVerse Heritage):
+Background: #402000 (Very Dark Brown)
+Main Theme: #FF8000 (Vivid Orange)
+Text:       #FFB000 (Light Orange/Gold)
+Border:     #BF6000 (Darker Orange)
+Bright:     #FFFF00 (Yellow)
+*/
+
+/* Global & Input Scrollbar Styling */
+* {
+    scrollbar-color: #BF6000 #402000;
+    scrollbar-width: thin;
+}
+
+/* For Chrome, Edge, and Safari */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #402000;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #BF6000;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #FF8000;
+}
+
+body {
+    background-color: #402000;
+    color: #FFB000;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header, nav {
+    background-color: #4D2600;
+    border-bottom: 2px solid #BF6000;
+    padding: 20px;
+}
+
+h1, h2, h3 {
+    color: #FF8000;
+}
+
+main, .container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card, .article-card {
+    background-color: #4D2600;
+    border: 1px solid #BF6000;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+
+button, .btn {
+    background-color: #FF8000;
+    color: #402000;
+    border: 2px solid #BF6000;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: inline-block;
+    text-decoration: none;
+}
+
+button:hover, .btn:hover {
+    background-color: #FFFF00 !important;
+    color: #402000 !important;
+    text-decoration: none;
+}
+
+input, textarea, select {
+    background-color: #593000;
+    border: 1px solid #BF6000;
+    color: #FFFF00;
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: inherit;
+    color-scheme: dark; /* Helps browsers choose dark system colors */
+}
+
+/*
+   Placeholder / Hint text styling.
+   This changes the default grey text to match your theme's
+   muted orange border color.
+*/
+input::placeholder,
+textarea::placeholder {
+    color: #BF6000;
+    opacity: 0.8; /* Ensures it looks like a hint and not final text */
+}
+
+/* Text selection styling to match VendorVerse theme */
+::selection {
+    background-color: #FF8000 !important; /* Vivid Orange background */
+    color: #402000 !important;            /* Very Dark Brown text */
+}
+
+::-moz-selection {
+    background-color: #FF8000 !important; /* For Firefox */
+    color: #402000 !important;
+}
+
+select {
+    /* This tells the browser to use a dark theme for system elements */
+    color-scheme: dark;
+    /* This influences the checkbox/radio/select highlight colors */
+    accent-color: #FF8000 !important;
+    cursor: pointer;
+}
+
+/* Ensure the select dropdown elements also match the theme */
+select option {
+    background-color: #402000 !important;
+    color: #FFB000 !important;
+    padding: 10px;
+}
+
+/*
+   Hover/Checked Override:
+   We use a massive inset shadow to cover the system blue.
+   We also use text-shadow to ensure text remains dark brown
+   even if the system tries to force it to white.
+*/
+select option:hover,
+select option:focus,
+select option:checked {
+    background-color: #FF8000 !important;
+    color: #402000 !important;
+    box-shadow: 0 0 10px 1000px #FF8000 inset !important;
+    text-shadow: 0 0 0 #402000 !important;
+}
+
+/* Focus state for the dropdown */
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: #FFFF00 !important;
+    background-color: #663300 !important;
+}
+
+label {
+    display: block;
+    color: #FF8000;
+    font-weight: bold;
+    margin-bottom: 5px;
+    margin-top: 15px;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-color: #BF6000;
+    margin: 20px 0;
+}
+
+a {
+    color: #FF8000;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #FFFF00;
+}

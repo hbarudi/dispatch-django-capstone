@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Create Publisher - Dispatch{% endblock %}
+
+{% block content %}
+<section class="card" style="max-width: 600px; margin: 40px auto;">
+    <header>
+        <h2 style="margin-top: 0;">Create a Publisher</h2>
+        <p style="color: #BF6000;">Add a new publisher for editors and journalists to join.</p>
+        <hr>
+    </header>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <footer style="margin-top: 20px;">
+            <button type="submit" class="btn">Create Publisher</button>
+            <a href="{% url 'publisher_list' %}" class="btn">Back to Publishers</a>
+        </footer>
+    </form>
+</section>
+
+{% endblock %}

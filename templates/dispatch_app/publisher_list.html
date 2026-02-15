@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block title %}Publishers - Dispatch{% endblock %}
+
+{% block content %}
+<section class="card" style="max-width: 900px; margin: 30px auto;">
+    <header>
+        <h2 style="margin-top: 0;">Publishers</h2>
+        <p style="color: #BF6000;">
+            {% if user.role == "READER" %}
+                Subscribe to a publisher to get their latest articles.
+            {% elif user.role == "JOURNALIST" %}
+                Join a publisher to write under their publication.
+            {% elif user.role == "EDITOR" %}
+                Manage publishers and assign yourself to them.
+            {% endif %}
+        </p>
+        <hr>
+    </header>
+
+    {% for publisher in publishers %}
+        <article class="card" style="margin: 15px 0;">
+            <header style="display: flex; justify-content: space-between; align-items: center;">
+                <h3 style="margin: 0;">{{ publisher.name }}</h3>
+                {% if user.role == "READER" %}
+                    <form action="{% url 'subscriptions' %}" method="post" style="display: inline;">
+                        {% csrf_token %}
+                        <input type="hidden" name="publisher_id" value="{{ publisher.id }}">
+                        <button type="submit" class="btn">
+                            {% if publisher in user.subscribed_publishers.all %}
+                                Unsubscribe
+                            {% else %}
+                                Subscribe
+                            {% endif %}
+                        </button>
+                    </form>
+                {% elif user.role == "JOURNALIST" %}
+                    {% if publisher in user.publisher_affiliations.all %}
+                        <span style="color: #FFFF00; font-weight: bold;">Joined</span>
+                    {% else %}
+                        <form action="{% url 'publisher_join' publisher.id %}" method="post" style="display: inline;">
+                            {% csrf_token %}
+                            <button type="submit" class="btn">Join</button>
+                        </form>
+                    {% endif %}
+                {% elif user.role == "EDITOR" %}
+                    {% if publisher in user.managed_publishers.all %}
+                        <span style="color: #FFFF00; font-weight: bold;">Joined</span>
+                    {% else %}
+                        <form action="{% url 'publisher_join' publisher.id %}" method="post" style="display: inline;">
+                            {% csrf_token %}
+                            <button type="submit" class="btn">Join</button>
+                        </form>
+                    {% endif %}
+                {% endif %}
+            </header>
+
+            {% if user.role == "EDITOR" %}
+                <p style="margin: 10px 0; color: #FFB000; font-size: 0.9rem;">
+                    Editors: {{ publisher.editors.all|length }} |
+                    Journalists: {{ publisher.journalists.all|length }}
+                </p>
+            {% endif %}
+        </article>
+    {% empty %}
+        <section class="card">
+            <p>No publishers have been created yet.</p>
+            {% if user.role == "EDITOR" %}
+                <a href="{% url 'publisher_create' %}" class="btn">Create the first publisher</a>
+            {% endif %}
+        </section>
+    {% endfor %}
+</section>
+{% endblock %}

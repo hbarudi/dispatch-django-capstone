@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}About - Dispatch Django{% endblock %}
+
+{% block content %}
+    <article class="card">
+        <header>
+            <h2 style="margin-top: 0;">About Dispatch Django</h2>
+            <hr>
+        </header>
+        <section class="product-description">
+            <p>Dispatch Django is a premier news platform designed to empower
+                independent journalists while providing readers with
+                high-quality, curated content.</p>
+
+            <p>Our platform facilitates a transparent relationship between
+                reporters, editors, and subscribers. Whether you are reporting
+                on local events or global trends, Dispatch provides the tools
+                you need to reach your audience.</p>
+
+            <h3>Platform Capabilities:</h3>
+            <ul style="list-style-type: disc; margin-left: 20px; color: #FFB000;">
+                <li><strong>Journalists:</strong> Publish independently or via
+                    affiliated news organizations.</li>
+                <li><strong>Editors:</strong> Ensure journalistic standards
+                    through a robust approval queue.</li>
+                <li><strong>Readers:</strong> Subscribe to specific journalists
+                    to receive exclusive newsletters.</li>
+                <li><strong>API:</strong> Access news data via our secure
+                    RESTful interface.</li>
+            </ul>
+        </section>
+    </article>
+{% endblock %}

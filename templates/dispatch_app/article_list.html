@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}Latest News – Dispatch Django{% endblock %}
+
+{% block content %}
+    <header>
+        <section style="display: flex; justify-content: space-between;
+                        align-items: center; flex-wrap: wrap; gap: 15px;">
+            <h2 style="margin: 0;">Latest Approved News</h2>
+            <!-- Search Bar Form -->
+            <form method="get" action="{% url 'article_list' %}"
+                  style="display: flex; gap: 10px; margin: 0;">
+                <input type="text" name="q" placeholder="Search news..."
+                       value="{{ request.GET.q }}"
+                       aria-label="Search news articles"
+                       style="margin: 0; width: 200px; padding: 8px;">
+                <button type="submit" class="btn"
+                        style="padding: 8px 15px;">Search</button>
+            </form>
+        </section>
+        <hr>
+    </header>
+
+    <section>
+        {% for article in articles %}
+            <article class="article-card">
+                <h3>{{ article.title }}</h3>
+                <p style="color: #BF6000; font-size: 0.9rem;">
+                    By {{ article.author.get_full_name|default:article.author.username }}
+                    on {{ article.created_at|date:"F j, Y" }}
+                </p>
+                <p>{{ article.content|truncatewords:50 }}</p>
+                <a href="{% url 'article_detail' article.id %}" class="btn">
+                    Read More
+                </a>
+            </article>
+        {% empty %}
+            <section class="card">
+                <p>No articles have been published yet. Please check back later.</p>
+            </section>
+        {% endfor %}
+    </section>
+{% endblock %}

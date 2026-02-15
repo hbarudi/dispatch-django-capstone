@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}Journalist Dashboard - Dispatch{% endblock %}
+
+{% block content %}
+    <header>
+        <section style="display: flex; justify-content: space-between;
+                    align-items: center;">
+            <h2  style="margin: 0;">My Articles</h2>
+            <a href="{% url 'article_create' %}" class="btn">Create New Article</a>
+        </section>
+        <hr>
+    </header>
+
+    <section>
+        {% for article in user_articles %}
+            <article class="card">
+                <header>
+                    <section style="display: flex; justify-content: space-between;
+                                    align-items: start;">
+                        <h3 style="margin: 0;">{{ article.title }}</h3>
+                        <span style="color: {% if article.is_approved %}#FFFF00{% else %}#BF6000{% endif %};
+                                     font-weight: bold; font-size: 0.8rem; text-transform: uppercase;">
+                            {% if article.is_approved %}Approved{% else %}Pending Approval{% endif %}
+                        </span>
+                    </section>
+                    <p style="color: #FFB000; font-size: 0.9rem; margin: 5px 0 15px 0;">
+                        Publisher: <strong>{{ article.publisher.name|default:"Independent" }}</strong>
+                    </p>
+                </header>
+                <p>{{ article.content|truncatewords:25 }}</p>
+                <footer style="margin-top: 20px;">
+                    <a href="{% url 'article_detail' article.id %}" class="btn"
+                       style="padding: 5px 15px; font-size: 0.8rem;">View Full Text</a>
+                    <a href="{% url 'article_update' article.id %}" class="btn"
+                       style="padding: 5px 15px; font-size: 0.8rem;">Edit</a>
+                    <a href="{% url 'article_delete' article.id %}" class="btn"
+                       style="padding: 5px 15px; font-size: 0.8rem; background-color: #800000; color: #FFFF00;">
+                        Delete
+                    </a>
+                </footer>
+            </article>
+        {% empty %}
+            <section class="card">
+                <p>You haven't written any articles yet.</p>
+            </section>
+        {% endfor %}
+    </section>
+{% endblock %}

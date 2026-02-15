@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}My Newsletters - Dispatch{% endblock %}
+
+{% block content %}
+    <header>
+        {% if user.role == "JOURNALIST" %}
+            <h2>My Newsletters</h2>
+            <p style="color: #BF6000;">Your published newsletters.</p>
+        {% else %}
+            <h2>Subscribed Newsletters</h2>
+            <p style="color: #BF6000;">Exclusive updates from your favorite journalists.</p>
+        {% endif %}
+        <hr>
+    </header>
+
+    <section>
+        {% for newsletter in newsletters %}
+            <article class="card">
+                <h3>{{ newsletter.title }}</h3>
+                <p style="color: #BF6000; font-size: 0.9rem;">
+                    By {{ newsletter.author.username }} on {{ newsletter.created_at|date:"F j, Y" }}
+                </p>
+                <section class="product-description">
+                    {{ newsletter.content|linebreaks }}
+                </section>
+                {% if user.role == "JOURNALIST" and newsletter.author == user %}
+                    <a href="{% url 'newsletter_update' newsletter.id %}" class="btn">Edit</a>
+                    <a href="{% url 'newsletter_delete' newsletter.id %}" class="btn"
+                       style="background-color: #800000; color: #FFFF00;">Delete</a>
+                {% endif %}
+            </article>
+        {% empty %}
+            <section class="card">
+                {% if user.role == "JOURNALIST" %}
+                    <p>You haven't written any newsletters yet.</p>
+                {% else %}
+                    <p>You haven't received any newsletters yet. Try following more journalists!</p>
+                {% endif %}
+            </section>
+        {% endfor %}
+    </section>
+{% endblock %}

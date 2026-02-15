@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}Manage Subscriptions - Dispatch{% endblock %}
+
+{% block content %}
+    <header>
+        <h2>Manage Your Subscriptions</h2>
+        <p style="color: #BF6000;">Follow your favorite sources to stay updated.</p>
+        <hr>
+    </header>
+
+    <section style="display: flex; gap: 30px; flex-wrap: wrap;">
+        <!-- Journalists Section -->
+        <section class="card" style="flex: 1; min-width: 300px;">
+            <h3>Journalists</h3>
+            <ul style="list-style: none; padding: 0;">
+                {% for journalist in journalists %}
+                    <li style="display: flex; justify-content: space-between;
+                           align-items: center; padding: 10px 0; border-bottom: 1px solid #BF6000;">
+                        <span>{{ journalist.get_full_name|default:journalist.username }}</span>
+                        <form method="post" style="margin: 0;">
+                            {% csrf_token %}
+                            <input type="hidden" name="journalist_id" value="{{ journalist.id }}">
+                            <button type="submit" class="btn" style="padding: 5px 10px; font-size: 0.8rem;">
+                                {% if journalist in user.subscribed_journalists.all %}Unfollow{% else %}Follow{% endif %}
+                            </button>
+                        </form>
+                    </li>
+                {% empty %}
+                    <p>No journalists found.</p>
+                {% endfor %}
+            </ul>
+        </section>
+
+        <!-- Publishers Section -->
+        <section class="card" style="flex: 1; min-width: 300px;">
+            <h3>Publications</h3>
+            <ul style="list-style: none; padding: 0;">
+                {% for publisher in publishers %}
+                    <li style="display: flex; justify-content: space-between;
+                           align-items: center; padding: 10px 0; border-bottom: 1px solid #BF6000;">
+                        <span>{{ publisher.name }}</span>
+                        <form method="post" style="margin: 0;">
+                            {% csrf_token %}
+                            <input type="hidden" name="publisher_id" value="{{ publisher.id }}">
+                            <button type="submit" class="btn" style="padding: 5px 10px; font-size: 0.8rem;">
+                                {% if publisher in user.subscribed_publishers.all %}Unfollow{% else %}Follow{% endif %}
+                            </button>
+                        </form>
+                    </li>
+                {% empty %}
+                    <p>No publications found.</p>
+                {% endfor %}
+            </ul>
+        </section>
+    </section>
+{% endblock %}

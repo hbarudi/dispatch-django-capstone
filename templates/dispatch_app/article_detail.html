@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block title %}{{ article.title }} - Dispatch Django{% endblock %}
+
+{% block content %}
+    <article class="card">
+        <header>
+            <nav style="background: none; border: none; padding: 0;">
+                <a href="{% url 'article_list' %}" class="btn">
+                    Back to News
+                </a>
+
+                {% if user.role == 'EDITOR' or user.is_superuser %}
+                    {% if article.is_approved %}
+                        <form action="{% url 'reject_article' article.id %}"
+                              method="post" style="display: inline;">
+                            {% csrf_token %}
+                            <button type="submit" class="btn"
+                                    style="background-color: #800000; color: #FFFF00;">
+                                Unpublish (Undo)
+                            </button>
+                        </form>
+                    {% endif %}
+                    <a href="/admin/dispatch_app/article/{{ article.id }}/change/"
+                       class="btn" style="background-color: #BF6000;">
+                        Edit (Admin)
+                    </a>
+                {% endif %}
+                {% if user.role == 'JOURNALIST' and article.author == user %}
+                    <a href="{% url 'article_update' article.id %}" class="btn">Edit</a>
+                    <a href="{% url 'article_delete' article.id %}" class="btn"
+                       style="background-color: #800000; color: #FFFF00;">Delete</a>
+                {% endif %}
+            </nav>
+            <h2 style="margin-top: 0;">{{ article.title }}</h2>
+            <p style="color: #BF6000;">
+                Written by
+                <strong>
+                    {{ article.author.get_full_name|default:article.author.username }}
+                </strong>
+                {% if article.publisher %}
+                    via <em>{{ article.publisher.name }}</em>
+                {% else %}
+                    (Independent Journalist)
+                {% endif %}
+                on {{ article.created_at|date:"F j, Y" }}
+            </p>
+            <hr>
+        </header>
+
+        <section class="product-description">
+            {{ article.content|linebreaks }}
+        </section>
+
+        <footer style="margin-top: 40px; border-top: 1px solid #BF6000;
+                   padding-top: 20px;">
+            <nav style="background: none; border: none; padding: 0;">
+                <a href="{% url 'article_list' %}" class="btn">
+                    Back to News
+                </a>
+
+                {% if user.role == 'EDITOR' or user.is_superuser %}
+                    <a href="/admin/dispatch_app/article/{{ article.id }}/change/"
+                       class="btn" style="background-color: #BF6000;">
+                        Edit (Admin)
+                    </a>
+                {% endif %}
+                {% if user.role == 'JOURNALIST' and article.author == user %}
+                    <a href="{% url 'article_update' article.id %}" class="btn">Edit</a>
+                    <a href="{% url 'article_delete' article.id %}" class="btn"
+                       style="background-color: #800000; color: #FFFF00;">Delete</a>
+                {% endif %}
+            </nav>
+        </footer>
+    </article>
+{% endblock %}

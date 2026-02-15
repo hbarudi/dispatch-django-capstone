@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block title %}Welcome to Dispatch Django{% endblock %}
+
+{% block content %}
+    <section class="card" style="text-align: center; padding: 50px 20px;">
+        <header>
+            <h1 style="font-size: 3rem; margin-bottom: 10px;">Dispatch Django</h1>
+            <p style="color: #FFB000; font-size: 1.2rem;">
+                Your Curated Source for Independent Journalism
+            </p>
+            <hr style="width: 50%; margin: 20px auto;">
+        </header>
+
+        <section style="margin: 40px 0;">
+            <p>Stay informed with articles from independent journalists and
+                curated publications from around the world.</p>
+        </section>
+
+        <nav style="background: none; border: none;">
+            {% if not user.is_authenticated %}
+                <a href="{% url 'register' %}" class="btn"
+                   style="font-size: 1.2rem; margin-right: 20px; padding: 15px 30px;">
+                    Register Now
+                </a>
+                <a href="{% url 'login' %}" class="btn"
+                   style="font-size: 1.2rem; padding: 15px 30px;">
+                    Sign In
+                </a>
+            {% else %}
+                <a href="{% url 'article_list' %}" class="btn"
+                   style="font-size: 1.2rem; padding: 15px 30px;">
+                    View Latest News
+                </a>
+            {% endif %}
+        </nav>
+    </section>
+
+    <section class="container" style="display: flex; gap: 20px; margin-top: 40px;">
+        <article class="card" style="flex: 1;">
+            <h3>For Readers</h3>
+            <p>Subscribe to your favorite journalists and publishers to
+                receive instant updates via email.</p>
+        </article>
+        <article class="card" style="flex: 1;">
+            <h3>For Journalists</h3>
+            <p>Publish your stories independently or through established
+                news organizations with ease.</p>
+        </article>
+    </section>
+{% endblock %}

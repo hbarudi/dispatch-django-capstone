@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Submit Article - Dispatch{% endblock %}
+
+{% block content %}
+    <section class="card">
+        <header>
+            <h2>Submit New Article</h2>
+            <p style="color: #BF6000;">Your article will be sent to an editor for approval.</p>
+            <hr>
+        </header>
+
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <footer style="margin-top: 20px;">
+                <button type="submit" class="btn">Submit for Review</button>
+                <a href="{% url 'journalist_dashboard' %}" class="btn"
+                   style="background-color: #593000; color: #FFB000;">Cancel</a>
+            </footer>
+        </form>
+    </section>
+{% endblock %}
