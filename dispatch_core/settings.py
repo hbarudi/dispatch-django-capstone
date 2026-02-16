@@ -68,7 +68,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'dispatch_db',
         'USER': 'dispatch_admin',
-        'PASSWORD': 'DispatchPass2025!',
+        'PASSWORD': '***********',
         'HOST': '127.0.0.1',
         'PORT': '3306',
         'OPTIONS': {
@@ -76,9 +76,6 @@ DATABASES = {
         },
     }
 }
-# Inner admin account
-# dispatch_admin
-# DispatchAdminSecure789!
 
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [

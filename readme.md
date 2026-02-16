@@ -12,8 +12,7 @@ permission management, third-party API integration, and RESTful
 service design.
 
 ## Test Accounts (Dummy Users)
-For testing purposes, the following accounts have been pre-configured in 
-the provided `db_backup.json`:
+For testing purposes, the following accounts have been pre-configured in the provided `db_backup.json`:
 
 | Username          | Role       | Password                | Purpose                         |
 |:------------------|:-----------|:------------------------|:--------------------------------|
@@ -36,7 +35,7 @@ Editors can create publishers, and editors/journalists can join publishers.
 Readers can subscribe to publishers to curate their feeds.
 
 ### 3. Automated Dissemination
-Upon article approval by an Editor, the system automatically:
+Upon article approval by an Editor, the system will automatically:
 *   Sends email notifications to all journalists and publisher
     subscribers.
 *   Posts a "Breaking News" update to a linked X (formerly Twitter)
@@ -100,6 +99,21 @@ python manage.py test dispatch_app.unit_tests
 
 ## Project Updated:
 * CRUD support for articles and newsletters for journalists.
-* Publisher flow so editors create publishers and editors/journalists can join.
+* Publisher flow: editors create publishers, and editors/journalists can join.
 
 **Built by Hashem Barudi as part of the HyperionDev Django News Application Capstone Project.**
+
+## Documentation (Sphinx)
+This project includes developer documentation generated with Sphinx.
+
+### Build the docs locally (HTML)
+From the project root:
+```bash
+cd docs
+.\make.bat html
+``` 
+
+Then open:
+
+- `docs/build/html/index.html`
+

@@ -75,6 +75,7 @@ def create_application_groups(sender, **kwargs):
                     )
                     # Assign the permission to the group
                     group.permissions.add(permission)
+                # noinspection PyUnresolvedReferences
                 except Permission.DoesNotExist:
                     # Logging a warning if a permission isn't found
                     print(
