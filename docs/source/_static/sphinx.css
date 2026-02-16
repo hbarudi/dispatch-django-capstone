@@ -1,0 +1,145 @@
+/* Dispatch Django docs theme (Sphinx override for Alabaster) */
+
+/* Core palette */
+:root {
+    --bg: #402000;
+    --panel: #4D2600;
+    --panel-2: #593000;
+    --border: #BF6000;
+    --accent: #FF8000;
+    --text: #FFB000;
+    --bright: #FFFF00;
+}
+
+/* Make the whole page dark */
+html, body {
+    background: var(--bg) !important;
+    color: var(--text) !important;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Alabaster wrappers that can stay white unless overridden */
+div.document,
+div.documentwrapper,
+div.bodywrapper,
+div.body {
+    background: var(--bg) !important;
+    color: var(--text) !important;
+}
+
+/* Main content area */
+div.body {
+    padding: 20px;
+}
+
+/* Sidebar (the area with search + navigation) */
+div.sphinxsidebar,
+div.sphinxsidebarwrapper {
+    background: var(--panel) !important;
+    color: var(--text) !important;
+    border-right: 2px solid var(--border);
+}
+
+/* Sidebar headings / nav text */
+div.sphinxsidebar h3,
+div.sphinxsidebar h4,
+div.sphinxsidebar p,
+div.sphinxsidebar li,
+div.sphinxsidebar a {
+    color: var(--text) !important;
+}
+
+div.sphinxsidebar a {
+    color: var(--accent) !important;
+    text-decoration: none;
+}
+div.sphinxsidebar a:hover {
+    color: var(--bright) !important;
+}
+
+/* Headings in main content */
+h1, h2, h3, h4 {
+    color: var(--accent) !important;
+}
+
+/* Search box styling (Alabaster uses sidebar search) */
+div.sphinxsidebar input[type="text"],
+div.sphinxsidebar input[type="search"] {
+    background: var(--panel-2) !important;
+    color: var(--bright) !important;
+    border: 1px solid var(--border) !important;
+    padding: 8px 10px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+div.sphinxsidebar input[type="submit"] {
+    background: var(--accent) !important;
+    color: var(--bg) !important;
+    border: 1px solid var(--border) !important;
+    padding: 8px 12px !important;
+    cursor: pointer !important;
+    font-weight: 700 !important;
+}
+
+div.sphinxsidebar input[type="submit"]:hover {
+    background: var(--bright) !important;
+    color: var(--bg) !important;
+}
+
+/* Code styling (Sphinx-heavy) */
+code, tt {
+    color: var(--bright) !important;
+    background: var(--panel) !important;
+    border: 1px solid var(--border) !important;
+    padding: 0.1em 0.25em;
+    border-radius: 3px;
+}
+
+pre {
+    background: var(--panel) !important;
+    color: var(--text) !important;
+    border: 1px solid var(--border) !important;
+    padding: 12px !important;
+    border-radius: 4px !important;
+    overflow: auto !important;
+}
+
+/* Links in the main body */
+div.body a {
+    color: var(--accent) !important;
+}
+div.body a:hover {
+    color: var(--bright) !important;
+}
+
+/* Selection */
+::selection {
+    background: var(--accent) !important;
+    color: var(--bg) !important;
+}
+
+/* Search placeholder text */
+div.sphinxsidebar input[type="text"]::placeholder,
+div.sphinxsidebar input[type="search"]::placeholder {
+  color: var(--border) !important;
+  opacity: 0.85;
+}
+
+/* Firefox placeholder */
+div.sphinxsidebar input[type="text"]::-moz-placeholder,
+div.sphinxsidebar input[type="search"]::-moz-placeholder {
+  color: var(--border) !important;
+  opacity: 0.85;
+}
+
+/* Remove Alabaster's dotted underline link style */
+a, a:visited {
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
+
+a:hover, a:focus {
+  text-decoration: underline !important;
+  border-bottom: none !important;
+}

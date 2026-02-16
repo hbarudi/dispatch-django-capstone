@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>dispatch_app &#8212; Dispatch Django  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=27fed22d" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx.css?v=93806330" />
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="dispatch_app package" href="dispatch_app.html" />
+    <link rel="prev" title="Templates and Static Files" href="templates_static.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="dispatch-app">
+<h1>dispatch_app<a class="headerlink" href="#dispatch-app" title="Link to this heading">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="dispatch_app.html">dispatch_app package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dispatch_app.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispatch_app.management.html">dispatch_app.management package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.management.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.management.html#module-dispatch_app.management.permissions_setup">dispatch_app.management.permissions_setup module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.management.html#module-dispatch_app.management">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="dispatch_app.migrations.html">dispatch_app.migrations package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.migrations.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.migrations.html#module-dispatch_app.migrations.0001_initial">dispatch_app.migrations.0001_initial module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.migrations.html#module-dispatch_app.migrations">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispatch_app.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dispatch_app.html#module-dispatch_app.admin">dispatch_app.admin module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispatch_app.html#dispatch_app.admin.CustomUserAdmin"><code class="docutils literal notranslate"><span class="pre">CustomUserAdmin</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.admin.CustomUserAdmin.add_fieldsets"><code class="docutils literal notranslate"><span class="pre">CustomUserAdmin.add_fieldsets</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.admin.CustomUserAdmin.fieldsets"><code class="docutils literal notranslate"><span class="pre">CustomUserAdmin.fieldsets</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.admin.CustomUserAdmin.list_display"><code class="docutils literal notranslate"><span class="pre">CustomUserAdmin.list_display</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.admin.CustomUserAdmin.media"><code class="docutils literal notranslate"><span class="pre">CustomUserAdmin.media</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.admin.CustomUserAdmin.model"><code class="docutils literal notranslate"><span class="pre">CustomUserAdmin.model</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispatch_app.html#module-dispatch_app.api_views">dispatch_app.api_views module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispatch_app.html#dispatch_app.api_views.ArticleViewSet"><code class="docutils literal notranslate"><span class="pre">ArticleViewSet</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.api_views.ArticleViewSet.basename"><code class="docutils literal notranslate"><span class="pre">ArticleViewSet.basename</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.api_views.ArticleViewSet.description"><code class="docutils literal notranslate"><span class="pre">ArticleViewSet.description</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.api_views.ArticleViewSet.detail"><code class="docutils literal notranslate"><span class="pre">ArticleViewSet.detail</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.api_views.ArticleViewSet.get_queryset"><code class="docutils literal notranslate"><span class="pre">ArticleViewSet.get_queryset()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.api_views.ArticleViewSet.name"><code class="docutils literal notranslate"><span class="pre">ArticleViewSet.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.api_views.ArticleViewSet.permission_classes"><code class="docutils literal notranslate"><span class="pre">ArticleViewSet.permission_classes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.api_views.ArticleViewSet.serializer_class"><code class="docutils literal notranslate"><span class="pre">ArticleViewSet.serializer_class</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.api_views.ArticleViewSet.suffix"><code class="docutils literal notranslate"><span class="pre">ArticleViewSet.suffix</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispatch_app.html#module-dispatch_app.apps">dispatch_app.apps module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispatch_app.html#dispatch_app.apps.DispatchAppConfig"><code class="docutils literal notranslate"><span class="pre">DispatchAppConfig</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.apps.DispatchAppConfig.default_auto_field"><code class="docutils literal notranslate"><span class="pre">DispatchAppConfig.default_auto_field</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.apps.DispatchAppConfig.name"><code class="docutils literal notranslate"><span class="pre">DispatchAppConfig.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.apps.DispatchAppConfig.ready"><code class="docutils literal notranslate"><span class="pre">DispatchAppConfig.ready()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispatch_app.html#module-dispatch_app.models">dispatch_app.models module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispatch_app.html#dispatch_app.models.Article"><code class="docutils literal notranslate"><span class="pre">Article</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.models.Article.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Article.DoesNotExist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.models.Article.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Article.MultipleObjectsReturned</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.models.Article.NotUpdated"><code class="docutils literal notranslate"><span class="pre">Article.NotUpdated</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.models.Article.author"><code class="docutils literal notranslate"><span class="pre">Article.author</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.models.Article.author_id"><code class="docutils literal notranslate"><span class="pre">Article.author_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.models.Article.content"><code class="docutils literal notranslate"><span class="pre">Article.content</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.models.Article.created_at"><code class="docutils literal notranslate"><span class="pre">Article.created_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.models.Article.get_next_by_created_at"><code class="docutils literal notranslate"><span class="pre">Article.get_next_by_created_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.models.Article.get_next_by_updated_at"><code class="docutils literal notranslate"><span class="pre">Article.get_next_by_updated_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.models.Article.get_previous_by_created_at"><code class="docutils literal notranslate"><span class="pre">Article.get_previous_by_created_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.models.Article.get_previous_by_updated_at"><code class="docutils literal notranslate"><span class="pre">Article.get_previous_by_updated_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.models.Article.id"><code class="docutils literal notranslate"><span class="pre">Article.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.models.Article.is_approved"><code class="docutils literal notranslate"><span class="pre">Article.is_approved</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.models.Article.objects"><code class="docutils literal notranslate"><span class="pre">Article.objects</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.models.Article.publisher"><code class="docutils literal notranslate"><span class="pre">Article.publisher</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.models.Article.publisher_id"><code class="docutils literal notranslate"><span class="pre">Article.publisher_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.models.Article.title"><code class="docutils literal notranslate"><span class="pre">Article.title</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.models.Article.updated_at"><code class="docutils literal notranslate"><span class="pre">Article.updated_at</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="dispatch_app.html#dispatch_app.models.CustomUser"><code class="docutils literal notranslate"><span class="pre">CustomUser</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.models.CustomUser.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">CustomUser.DoesNotExist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.models.CustomUser.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">CustomUser.MultipleObjectsReturned</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.models.CustomUser.NotUpdated"><code class="docutils literal notranslate"><span class="pre">CustomUser.NotUpdated</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.models.CustomUser.ROLE_CHOICES"><code class="docutils literal notranslate"><span class="pre">CustomUser.ROLE_CHOICES</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.models.CustomUser.articles"><code class="docutils literal notranslate"><span class="pre">CustomUser.articles</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.models.CustomUser.date_joined"><code class="docutils literal notranslate"><span class="pre">CustomUser.date_joined</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.models.CustomUser.email"><code class="docutils literal notranslate"><span class="pre">CustomUser.email</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.models.CustomUser.first_name"><code class="docutils literal notranslate"><span class="pre">CustomUser.first_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.models.CustomUser.get_next_by_date_joined"><code class="docutils literal notranslate"><span class="pre">CustomUser.get_next_by_date_joined()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.models.CustomUser.get_previous_by_date_joined"><code class="docutils literal notranslate"><span class="pre">CustomUser.get_previous_by_date_joined()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.models.CustomUser.get_role_display"><code class="docutils literal notranslate"><span class="pre">CustomUser.get_role_display()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.models.CustomUser.groups"><code class="docutils literal notranslate"><span class="pre">CustomUser.groups</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.models.CustomUser.id"><code class="docutils literal notranslate"><span class="pre">CustomUser.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.models.CustomUser.is_active"><code class="docutils literal notranslate"><span class="pre">CustomUser.is_active</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.models.CustomUser.is_staff"><code class="docutils literal notranslate"><span class="pre">CustomUser.is_staff</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.models.CustomUser.is_superuser"><code class="docutils literal notranslate"><span class="pre">CustomUser.is_superuser</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.models.CustomUser.journalist_subscribers"><code class="docutils literal notranslate"><span class="pre">CustomUser.journalist_subscribers</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.models.CustomUser.last_login"><code class="docutils literal notranslate"><span class="pre">CustomUser.last_login</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.models.CustomUser.last_name"><code class="docutils literal notranslate"><span class="pre">CustomUser.last_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.models.CustomUser.logentry_set"><code class="docutils literal notranslate"><span class="pre">CustomUser.logentry_set</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.models.CustomUser.managed_publishers"><code class="docutils literal notranslate"><span class="pre">CustomUser.managed_publishers</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.models.CustomUser.newsletters"><code class="docutils literal notranslate"><span class="pre">CustomUser.newsletters</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.models.CustomUser.objects"><code class="docutils literal notranslate"><span class="pre">CustomUser.objects</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.models.CustomUser.password"><code class="docutils literal notranslate"><span class="pre">CustomUser.password</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.models.CustomUser.publisher_affiliations"><code class="docutils literal notranslate"><span class="pre">CustomUser.publisher_affiliations</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.models.CustomUser.role"><code class="docutils literal notranslate"><span class="pre">CustomUser.role</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.models.CustomUser.subscribed_journalists"><code class="docutils literal notranslate"><span class="pre">CustomUser.subscribed_journalists</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.models.CustomUser.subscribed_publishers"><code class="docutils literal notranslate"><span class="pre">CustomUser.subscribed_publishers</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.models.CustomUser.user_permissions"><code class="docutils literal notranslate"><span class="pre">CustomUser.user_permissions</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.models.CustomUser.username"><code class="docutils literal notranslate"><span class="pre">CustomUser.username</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="dispatch_app.html#dispatch_app.models.Newsletter"><code class="docutils literal notranslate"><span class="pre">Newsletter</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.models.Newsletter.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Newsletter.DoesNotExist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.models.Newsletter.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Newsletter.MultipleObjectsReturned</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.models.Newsletter.NotUpdated"><code class="docutils literal notranslate"><span class="pre">Newsletter.NotUpdated</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.models.Newsletter.author"><code class="docutils literal notranslate"><span class="pre">Newsletter.author</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.models.Newsletter.author_id"><code class="docutils literal notranslate"><span class="pre">Newsletter.author_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.models.Newsletter.content"><code class="docutils literal notranslate"><span class="pre">Newsletter.content</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.models.Newsletter.created_at"><code class="docutils literal notranslate"><span class="pre">Newsletter.created_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.models.Newsletter.get_next_by_created_at"><code class="docutils literal notranslate"><span class="pre">Newsletter.get_next_by_created_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.models.Newsletter.get_previous_by_created_at"><code class="docutils literal notranslate"><span class="pre">Newsletter.get_previous_by_created_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.models.Newsletter.id"><code class="docutils literal notranslate"><span class="pre">Newsletter.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.models.Newsletter.objects"><code class="docutils literal notranslate"><span class="pre">Newsletter.objects</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.models.Newsletter.title"><code class="docutils literal notranslate"><span class="pre">Newsletter.title</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="dispatch_app.html#dispatch_app.models.Publisher"><code class="docutils literal notranslate"><span class="pre">Publisher</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.models.Publisher.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Publisher.DoesNotExist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.models.Publisher.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Publisher.MultipleObjectsReturned</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.models.Publisher.NotUpdated"><code class="docutils literal notranslate"><span class="pre">Publisher.NotUpdated</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.models.Publisher.articles"><code class="docutils literal notranslate"><span class="pre">Publisher.articles</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.models.Publisher.editors"><code class="docutils literal notranslate"><span class="pre">Publisher.editors</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.models.Publisher.id"><code class="docutils literal notranslate"><span class="pre">Publisher.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.models.Publisher.journalists"><code class="docutils literal notranslate"><span class="pre">Publisher.journalists</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.models.Publisher.name"><code class="docutils literal notranslate"><span class="pre">Publisher.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.models.Publisher.objects"><code class="docutils literal notranslate"><span class="pre">Publisher.objects</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.models.Publisher.subscribers"><code class="docutils literal notranslate"><span class="pre">Publisher.subscribers</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispatch_app.html#module-dispatch_app.serializers">dispatch_app.serializers module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispatch_app.html#dispatch_app.serializers.ArticleSerializer"><code class="docutils literal notranslate"><span class="pre">ArticleSerializer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.serializers.ArticleSerializer.Meta"><code class="docutils literal notranslate"><span class="pre">ArticleSerializer.Meta</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="dispatch_app.html#dispatch_app.serializers.NewsletterSerializer"><code class="docutils literal notranslate"><span class="pre">NewsletterSerializer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.serializers.NewsletterSerializer.Meta"><code class="docutils literal notranslate"><span class="pre">NewsletterSerializer.Meta</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="dispatch_app.html#dispatch_app.serializers.PublisherSerializer"><code class="docutils literal notranslate"><span class="pre">PublisherSerializer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.serializers.PublisherSerializer.Meta"><code class="docutils literal notranslate"><span class="pre">PublisherSerializer.Meta</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="dispatch_app.html#dispatch_app.serializers.UserSerializer"><code class="docutils literal notranslate"><span class="pre">UserSerializer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.serializers.UserSerializer.Meta"><code class="docutils literal notranslate"><span class="pre">UserSerializer.Meta</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispatch_app.html#module-dispatch_app.signals">dispatch_app.signals module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispatch_app.html#dispatch_app.signals.handle_article_approval"><code class="docutils literal notranslate"><span class="pre">handle_article_approval()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispatch_app.html#dispatch_app.signals.post_to_x"><code class="docutils literal notranslate"><span class="pre">post_to_x()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispatch_app.html#dispatch_app.signals.send_approval_emails"><code class="docutils literal notranslate"><span class="pre">send_approval_emails()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispatch_app.html#module-dispatch_app.unit_tests">dispatch_app.unit_tests module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispatch_app.html#dispatch_app.unit_tests.ArticleAPITests"><code class="docutils literal notranslate"><span class="pre">ArticleAPITests</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.unit_tests.ArticleAPITests.setUp"><code class="docutils literal notranslate"><span class="pre">ArticleAPITests.setUp()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.unit_tests.ArticleAPITests.test_subscription_filtering"><code class="docutils literal notranslate"><span class="pre">ArticleAPITests.test_subscription_filtering()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.unit_tests.ArticleAPITests.test_superuser_access"><code class="docutils literal notranslate"><span class="pre">ArticleAPITests.test_superuser_access()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.unit_tests.ArticleAPITests.test_unauthenticated_access"><code class="docutils literal notranslate"><span class="pre">ArticleAPITests.test_unauthenticated_access()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispatch_app.html#module-dispatch_app.urls">dispatch_app.urls module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dispatch_app.html#module-dispatch_app.views">dispatch_app.views module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.AboutView"><code class="docutils literal notranslate"><span class="pre">AboutView</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.AboutView.template_name"><code class="docutils literal notranslate"><span class="pre">AboutView.template_name</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.ArticleCreateView"><code class="docutils literal notranslate"><span class="pre">ArticleCreateView</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.ArticleCreateView.fields"><code class="docutils literal notranslate"><span class="pre">ArticleCreateView.fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.ArticleCreateView.form_valid"><code class="docutils literal notranslate"><span class="pre">ArticleCreateView.form_valid()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.ArticleCreateView.get_form"><code class="docutils literal notranslate"><span class="pre">ArticleCreateView.get_form()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.ArticleCreateView.model"><code class="docutils literal notranslate"><span class="pre">ArticleCreateView.model</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.ArticleCreateView.success_url"><code class="docutils literal notranslate"><span class="pre">ArticleCreateView.success_url</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.ArticleCreateView.template_name"><code class="docutils literal notranslate"><span class="pre">ArticleCreateView.template_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.ArticleCreateView.test_func"><code class="docutils literal notranslate"><span class="pre">ArticleCreateView.test_func()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.ArticleDeleteView"><code class="docutils literal notranslate"><span class="pre">ArticleDeleteView</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.ArticleDeleteView.model"><code class="docutils literal notranslate"><span class="pre">ArticleDeleteView.model</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.ArticleDeleteView.success_url"><code class="docutils literal notranslate"><span class="pre">ArticleDeleteView.success_url</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.ArticleDeleteView.template_name"><code class="docutils literal notranslate"><span class="pre">ArticleDeleteView.template_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.ArticleDeleteView.test_func"><code class="docutils literal notranslate"><span class="pre">ArticleDeleteView.test_func()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.ArticleDetailView"><code class="docutils literal notranslate"><span class="pre">ArticleDetailView</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.ArticleDetailView.model"><code class="docutils literal notranslate"><span class="pre">ArticleDetailView.model</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.ArticleDetailView.template_name"><code class="docutils literal notranslate"><span class="pre">ArticleDetailView.template_name</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.ArticleListView"><code class="docutils literal notranslate"><span class="pre">ArticleListView</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.ArticleListView.context_object_name"><code class="docutils literal notranslate"><span class="pre">ArticleListView.context_object_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.ArticleListView.get_queryset"><code class="docutils literal notranslate"><span class="pre">ArticleListView.get_queryset()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.ArticleListView.model"><code class="docutils literal notranslate"><span class="pre">ArticleListView.model</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.ArticleListView.template_name"><code class="docutils literal notranslate"><span class="pre">ArticleListView.template_name</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.ArticleUpdateView"><code class="docutils literal notranslate"><span class="pre">ArticleUpdateView</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.ArticleUpdateView.fields"><code class="docutils literal notranslate"><span class="pre">ArticleUpdateView.fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.ArticleUpdateView.model"><code class="docutils literal notranslate"><span class="pre">ArticleUpdateView.model</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.ArticleUpdateView.success_url"><code class="docutils literal notranslate"><span class="pre">ArticleUpdateView.success_url</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.ArticleUpdateView.template_name"><code class="docutils literal notranslate"><span class="pre">ArticleUpdateView.template_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.ArticleUpdateView.test_func"><code class="docutils literal notranslate"><span class="pre">ArticleUpdateView.test_func()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.CustomUserCreationForm"><code class="docutils literal notranslate"><span class="pre">CustomUserCreationForm</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.CustomUserCreationForm.Meta"><code class="docutils literal notranslate"><span class="pre">CustomUserCreationForm.Meta</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.CustomUserCreationForm.base_fields"><code class="docutils literal notranslate"><span class="pre">CustomUserCreationForm.base_fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.CustomUserCreationForm.declared_fields"><code class="docutils literal notranslate"><span class="pre">CustomUserCreationForm.declared_fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.CustomUserCreationForm.media"><code class="docutils literal notranslate"><span class="pre">CustomUserCreationForm.media</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.EditorDashboardView"><code class="docutils literal notranslate"><span class="pre">EditorDashboardView</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.EditorDashboardView.context_object_name"><code class="docutils literal notranslate"><span class="pre">EditorDashboardView.context_object_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.EditorDashboardView.get_queryset"><code class="docutils literal notranslate"><span class="pre">EditorDashboardView.get_queryset()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.EditorDashboardView.model"><code class="docutils literal notranslate"><span class="pre">EditorDashboardView.model</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.EditorDashboardView.template_name"><code class="docutils literal notranslate"><span class="pre">EditorDashboardView.template_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.EditorDashboardView.test_func"><code class="docutils literal notranslate"><span class="pre">EditorDashboardView.test_func()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.HomeView"><code class="docutils literal notranslate"><span class="pre">HomeView</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.HomeView.template_name"><code class="docutils literal notranslate"><span class="pre">HomeView.template_name</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.JournalistDashboardView"><code class="docutils literal notranslate"><span class="pre">JournalistDashboardView</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.JournalistDashboardView.context_object_name"><code class="docutils literal notranslate"><span class="pre">JournalistDashboardView.context_object_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.JournalistDashboardView.get_queryset"><code class="docutils literal notranslate"><span class="pre">JournalistDashboardView.get_queryset()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.JournalistDashboardView.model"><code class="docutils literal notranslate"><span class="pre">JournalistDashboardView.model</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.JournalistDashboardView.template_name"><code class="docutils literal notranslate"><span class="pre">JournalistDashboardView.template_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.JournalistDashboardView.test_func"><code class="docutils literal notranslate"><span class="pre">JournalistDashboardView.test_func()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.NewsletterCreateView"><code class="docutils literal notranslate"><span class="pre">NewsletterCreateView</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.NewsletterCreateView.fields"><code class="docutils literal notranslate"><span class="pre">NewsletterCreateView.fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.NewsletterCreateView.form_valid"><code class="docutils literal notranslate"><span class="pre">NewsletterCreateView.form_valid()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.NewsletterCreateView.model"><code class="docutils literal notranslate"><span class="pre">NewsletterCreateView.model</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.NewsletterCreateView.success_url"><code class="docutils literal notranslate"><span class="pre">NewsletterCreateView.success_url</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.NewsletterCreateView.template_name"><code class="docutils literal notranslate"><span class="pre">NewsletterCreateView.template_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.NewsletterCreateView.test_func"><code class="docutils literal notranslate"><span class="pre">NewsletterCreateView.test_func()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.NewsletterDeleteView"><code class="docutils literal notranslate"><span class="pre">NewsletterDeleteView</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.NewsletterDeleteView.model"><code class="docutils literal notranslate"><span class="pre">NewsletterDeleteView.model</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.NewsletterDeleteView.success_url"><code class="docutils literal notranslate"><span class="pre">NewsletterDeleteView.success_url</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.NewsletterDeleteView.template_name"><code class="docutils literal notranslate"><span class="pre">NewsletterDeleteView.template_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.NewsletterDeleteView.test_func"><code class="docutils literal notranslate"><span class="pre">NewsletterDeleteView.test_func()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.NewsletterListView"><code class="docutils literal notranslate"><span class="pre">NewsletterListView</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.NewsletterListView.context_object_name"><code class="docutils literal notranslate"><span class="pre">NewsletterListView.context_object_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.NewsletterListView.get_queryset"><code class="docutils literal notranslate"><span class="pre">NewsletterListView.get_queryset()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.NewsletterListView.model"><code class="docutils literal notranslate"><span class="pre">NewsletterListView.model</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.NewsletterListView.template_name"><code class="docutils literal notranslate"><span class="pre">NewsletterListView.template_name</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.NewsletterUpdateView"><code class="docutils literal notranslate"><span class="pre">NewsletterUpdateView</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.NewsletterUpdateView.fields"><code class="docutils literal notranslate"><span class="pre">NewsletterUpdateView.fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.NewsletterUpdateView.model"><code class="docutils literal notranslate"><span class="pre">NewsletterUpdateView.model</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.NewsletterUpdateView.success_url"><code class="docutils literal notranslate"><span class="pre">NewsletterUpdateView.success_url</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.NewsletterUpdateView.template_name"><code class="docutils literal notranslate"><span class="pre">NewsletterUpdateView.template_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.NewsletterUpdateView.test_func"><code class="docutils literal notranslate"><span class="pre">NewsletterUpdateView.test_func()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.PublisherCreateView"><code class="docutils literal notranslate"><span class="pre">PublisherCreateView</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.PublisherCreateView.fields"><code class="docutils literal notranslate"><span class="pre">PublisherCreateView.fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.PublisherCreateView.model"><code class="docutils literal notranslate"><span class="pre">PublisherCreateView.model</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.PublisherCreateView.success_url"><code class="docutils literal notranslate"><span class="pre">PublisherCreateView.success_url</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.PublisherCreateView.template_name"><code class="docutils literal notranslate"><span class="pre">PublisherCreateView.template_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.PublisherCreateView.test_func"><code class="docutils literal notranslate"><span class="pre">PublisherCreateView.test_func()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.PublisherListView"><code class="docutils literal notranslate"><span class="pre">PublisherListView</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.PublisherListView.context_object_name"><code class="docutils literal notranslate"><span class="pre">PublisherListView.context_object_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.PublisherListView.model"><code class="docutils literal notranslate"><span class="pre">PublisherListView.model</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.PublisherListView.template_name"><code class="docutils literal notranslate"><span class="pre">PublisherListView.template_name</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.RegisterView"><code class="docutils literal notranslate"><span class="pre">RegisterView</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.RegisterView.form_class"><code class="docutils literal notranslate"><span class="pre">RegisterView.form_class</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.RegisterView.model"><code class="docutils literal notranslate"><span class="pre">RegisterView.model</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.RegisterView.success_url"><code class="docutils literal notranslate"><span class="pre">RegisterView.success_url</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.RegisterView.template_name"><code class="docutils literal notranslate"><span class="pre">RegisterView.template_name</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.SubscriptionsView"><code class="docutils literal notranslate"><span class="pre">SubscriptionsView</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.SubscriptionsView.get_context_data"><code class="docutils literal notranslate"><span class="pre">SubscriptionsView.get_context_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.SubscriptionsView.post"><code class="docutils literal notranslate"><span class="pre">SubscriptionsView.post()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.SubscriptionsView.template_name"><code class="docutils literal notranslate"><span class="pre">SubscriptionsView.template_name</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.approve_article"><code class="docutils literal notranslate"><span class="pre">approve_article()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.join_publisher"><code class="docutils literal notranslate"><span class="pre">join_publisher()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispatch_app.html#dispatch_app.views.reject_article"><code class="docutils literal notranslate"><span class="pre">reject_article()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispatch_app.html#module-dispatch_app">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Dispatch Django</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup.html">Setup (Development)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="config.html">Settings reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="config.html#css-theme-file">CSS theme file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="templates_static.html">Templates and Static Files</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">dispatch_app</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dispatch_app.html">dispatch_app package</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="templates_static.html" title="previous chapter">Templates and Static Files</a></li>
+      <li>Next: <a href="dispatch_app.html" title="next chapter">dispatch_app package</a></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 9.1.0</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="_sources/modules.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

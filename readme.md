@@ -36,7 +36,7 @@ Editors can create publishers, and editors/journalists can join publishers.
 Readers can subscribe to publishers to curate their feeds.
 
 ### 3. Automated Dissemination
-Upon article approval by an Editor, the system automatically:
+Upon article approval by an Editor, the system will automatically:
 *   Sends email notifications to all journalists and publisher
     subscribers.
 *   Posts a "Breaking News" update to a linked X (formerly Twitter)
@@ -90,6 +90,45 @@ A secure API endpoint (`/api/articles/`) provides:
     python manage.py runserver 8001
     ```
 
+## Documentation (Sphinx)
+
+### Build docs locally (Windows)
+From the project root:
+```bash
+cd docs
+.\make.bat clean
+.\make.bat html
+```
+
+Open:
+- `docs/build/html/index.html`
+
+## Run with Docker (container)
+
+This repository includes a `Dockerfile` for running the app in a Linux container.
+The container is configured to use SQLite by default.
+
+### Build the image
+From the project root:
+```bash
+docker build -t dispatch-django .
+```
+During the Docker image build, the image will:
+- Generate Sphinx HTML documentation into `docs/build/html`
+- Create an SQLite database (`db.sqlite3`) and load sample data from `db_backup.json`
+- Docker uses `requirements_docker.txt`.
+
+### Run the container
+```bash
+docker run --rm -p 8001:8001 dispatch-django
+```
+
+Open:
+- `http://127.0.0.1:8001/`
+
+### Sample data
+Sample users/content are provided in `db_backup.json` for development/testing.
+
 ## Testing
 To run the automated test suite for the API and subscription logic:
 ```bash
@@ -100,6 +139,6 @@ python manage.py test dispatch_app.unit_tests
 
 ## Project Updated:
 * CRUD support for articles and newsletters for journalists.
-* Publisher flow so editors create publishers and editors/journalists can join.
+* Publisher flow: editors create publishers, and editors/journalists can join.
 
 **Built by Hashem Barudi as part of the HyperionDev Django News Application Capstone Project.**

@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Settings reference &#8212; Dispatch Django  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=27fed22d" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx.css?v=93806330" />
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Templates and Static Files" href="templates_static.html" />
+    <link rel="prev" title="Setup (Development)" href="setup.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="settings-reference">
+<h1>Settings reference<a class="headerlink" href="#settings-reference" title="Link to this heading">¶</a></h1>
+<p>The following is the project settings module (shown for documentation purposes):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">  1</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">  2</span><span class="sd">Django settings for the DispatchDjango project.</span>
+<span class="linenos">  3</span><span class="sd">Provides configuration for database, security, and application modules.</span>
+<span class="linenos">  4</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">  5</span>
+<span class="linenos">  6</span><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="linenos">  7</span>
+<span class="linenos">  8</span><span class="c1"># Build paths inside the project like this: BASE_DIR / &#39;subdir&#39;.</span>
+<span class="linenos">  9</span><span class="n">BASE_DIR</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">parent</span>
+<span class="linenos"> 10</span>
+<span class="linenos"> 11</span><span class="c1"># SECURITY WARNING: keep the secret key used in production secret!</span>
+<span class="linenos"> 12</span><span class="n">SECRET_KEY</span> <span class="o">=</span> <span class="s1">&#39;django-insecure-your-secret-key-here&#39;</span>
+<span class="linenos"> 13</span>
+<span class="linenos"> 14</span><span class="c1"># SECURITY WARNING: don&#39;t run with debug turned on in production!</span>
+<span class="linenos"> 15</span><span class="n">DEBUG</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="linenos"> 16</span><span class="n">ALLOWED_HOSTS</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="linenos"> 17</span>
+<span class="linenos"> 18</span><span class="c1"># Application definition</span>
+<span class="linenos"> 19</span><span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">[</span>
+<span class="linenos"> 20</span>    <span class="s1">&#39;django.contrib.admin&#39;</span><span class="p">,</span>
+<span class="linenos"> 21</span>    <span class="s1">&#39;django.contrib.auth&#39;</span><span class="p">,</span>
+<span class="linenos"> 22</span>    <span class="s1">&#39;django.contrib.contenttypes&#39;</span><span class="p">,</span>
+<span class="linenos"> 23</span>    <span class="s1">&#39;django.contrib.sessions&#39;</span><span class="p">,</span>
+<span class="linenos"> 24</span>    <span class="s1">&#39;django.contrib.messages&#39;</span><span class="p">,</span>
+<span class="linenos"> 25</span>    <span class="s1">&#39;django.contrib.staticfiles&#39;</span><span class="p">,</span>
+<span class="linenos"> 26</span>    <span class="s1">&#39;rest_framework&#39;</span><span class="p">,</span>
+<span class="linenos"> 27</span>    <span class="s1">&#39;dispatch_app&#39;</span><span class="p">,</span>
+<span class="linenos"> 28</span><span class="p">]</span>
+<span class="linenos"> 29</span>
+<span class="linenos"> 30</span><span class="c1"># Custom User Model definition</span>
+<span class="linenos"> 31</span><span class="n">AUTH_USER_MODEL</span> <span class="o">=</span> <span class="s1">&#39;dispatch_app.CustomUser&#39;</span>
+<span class="linenos"> 32</span>
+<span class="linenos"> 33</span><span class="n">MIDDLEWARE</span> <span class="o">=</span> <span class="p">[</span>
+<span class="linenos"> 34</span>    <span class="s1">&#39;django.middleware.security.SecurityMiddleware&#39;</span><span class="p">,</span>
+<span class="linenos"> 35</span>    <span class="s1">&#39;django.contrib.sessions.middleware.SessionMiddleware&#39;</span><span class="p">,</span>
+<span class="linenos"> 36</span>    <span class="s1">&#39;django.middleware.common.CommonMiddleware&#39;</span><span class="p">,</span>
+<span class="linenos"> 37</span>    <span class="s1">&#39;django.middleware.csrf.CsrfViewMiddleware&#39;</span><span class="p">,</span>
+<span class="linenos"> 38</span>    <span class="s1">&#39;django.contrib.auth.middleware.AuthenticationMiddleware&#39;</span><span class="p">,</span>
+<span class="linenos"> 39</span>    <span class="s1">&#39;django.contrib.messages.middleware.MessageMiddleware&#39;</span><span class="p">,</span>
+<span class="linenos"> 40</span>    <span class="s1">&#39;django.middleware.clickjacking.XFrameOptionsMiddleware&#39;</span><span class="p">,</span>
+<span class="linenos"> 41</span><span class="p">]</span>
+<span class="linenos"> 42</span>
+<span class="linenos"> 43</span><span class="n">ROOT_URLCONF</span> <span class="o">=</span> <span class="s1">&#39;dispatch_core.urls&#39;</span>
+<span class="linenos"> 44</span>
+<span class="linenos"> 45</span><span class="n">TEMPLATES</span> <span class="o">=</span> <span class="p">[</span>
+<span class="linenos"> 46</span>    <span class="p">{</span>
+<span class="linenos"> 47</span>        <span class="s1">&#39;BACKEND&#39;</span><span class="p">:</span> <span class="s1">&#39;django.template.backends.django.DjangoTemplates&#39;</span><span class="p">,</span>
+<span class="linenos"> 48</span>        <span class="s1">&#39;DIRS&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">BASE_DIR</span> <span class="o">/</span> <span class="s1">&#39;templates&#39;</span><span class="p">],</span>
+<span class="linenos"> 49</span>        <span class="s1">&#39;APP_DIRS&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+<span class="linenos"> 50</span>        <span class="s1">&#39;OPTIONS&#39;</span><span class="p">:</span> <span class="p">{</span>
+<span class="linenos"> 51</span>            <span class="s1">&#39;context_processors&#39;</span><span class="p">:</span> <span class="p">[</span>
+<span class="linenos"> 52</span>                <span class="s1">&#39;django.template.context_processors.debug&#39;</span><span class="p">,</span>
+<span class="linenos"> 53</span>                <span class="s1">&#39;django.template.context_processors.request&#39;</span><span class="p">,</span>
+<span class="linenos"> 54</span>                <span class="s1">&#39;django.contrib.auth.context_processors.auth&#39;</span><span class="p">,</span>
+<span class="linenos"> 55</span>                <span class="s1">&#39;django.contrib.messages.context_processors.messages&#39;</span><span class="p">,</span>
+<span class="linenos"> 56</span>            <span class="p">],</span>
+<span class="linenos"> 57</span>        <span class="p">},</span>
+<span class="linenos"> 58</span>    <span class="p">},</span>
+<span class="linenos"> 59</span><span class="p">]</span>
+<span class="linenos"> 60</span>
+<span class="linenos"> 61</span><span class="n">WSGI_APPLICATION</span> <span class="o">=</span> <span class="s1">&#39;dispatch_core.wsgi.application&#39;</span>
+<span class="linenos"> 62</span>
+<span class="linenos"> 63</span><span class="c1"># Database configuration</span>
+<span class="linenos"> 64</span><span class="c1"># The project has been configured to use MariaDB</span>
+<span class="linenos"> 65</span><span class="c1"># instead of the default SQLite.</span>
+<span class="linenos"> 66</span><span class="n">DATABASES</span> <span class="o">=</span> <span class="p">{</span>
+<span class="linenos"> 67</span>    <span class="s1">&#39;default&#39;</span><span class="p">:</span> <span class="p">{</span>
+<span class="linenos"> 68</span>        <span class="s1">&#39;ENGINE&#39;</span><span class="p">:</span> <span class="s1">&#39;django.db.backends.mysql&#39;</span><span class="p">,</span>
+<span class="linenos"> 69</span>        <span class="s1">&#39;NAME&#39;</span><span class="p">:</span> <span class="s1">&#39;dispatch_db&#39;</span><span class="p">,</span>
+<span class="linenos"> 70</span>        <span class="s1">&#39;USER&#39;</span><span class="p">:</span> <span class="s1">&#39;dispatch_admin&#39;</span><span class="p">,</span>
+<span class="linenos"> 71</span>        <span class="s1">&#39;PASSWORD&#39;</span><span class="p">:</span> <span class="s1">&#39;***********&#39;</span><span class="p">,</span>
+<span class="linenos"> 72</span>        <span class="s1">&#39;HOST&#39;</span><span class="p">:</span> <span class="s1">&#39;127.0.0.1&#39;</span><span class="p">,</span>
+<span class="linenos"> 73</span>        <span class="s1">&#39;PORT&#39;</span><span class="p">:</span> <span class="s1">&#39;3306&#39;</span><span class="p">,</span>
+<span class="linenos"> 74</span>        <span class="s1">&#39;OPTIONS&#39;</span><span class="p">:</span> <span class="p">{</span>
+<span class="linenos"> 75</span>            <span class="s1">&#39;init_command&#39;</span><span class="p">:</span> <span class="s2">&quot;SET sql_mode=&#39;STRICT_TRANS_TABLES&#39;&quot;</span><span class="p">,</span>
+<span class="linenos"> 76</span>        <span class="p">},</span>
+<span class="linenos"> 77</span>    <span class="p">}</span>
+<span class="linenos"> 78</span><span class="p">}</span>
+<span class="linenos"> 79</span>
+<span class="linenos"> 80</span><span class="c1"># Password validation</span>
+<span class="linenos"> 81</span><span class="n">AUTH_PASSWORD_VALIDATORS</span> <span class="o">=</span> <span class="p">[</span>
+<span class="linenos"> 82</span>    <span class="p">{</span>
+<span class="linenos"> 83</span>        <span class="s1">&#39;NAME&#39;</span><span class="p">:</span> <span class="s1">&#39;django.contrib.auth.password_validation.&#39;</span>
+<span class="linenos"> 84</span>                <span class="s1">&#39;UserAttributeSimilarityValidator&#39;</span>
+<span class="linenos"> 85</span>    <span class="p">},</span>
+<span class="linenos"> 86</span>    <span class="p">{</span>
+<span class="linenos"> 87</span>        <span class="s1">&#39;NAME&#39;</span><span class="p">:</span> <span class="s1">&#39;django.contrib.auth.password_validation.&#39;</span>
+<span class="linenos"> 88</span>                <span class="s1">&#39;MinimumLengthValidator&#39;</span>
+<span class="linenos"> 89</span>    <span class="p">},</span>
+<span class="linenos"> 90</span>    <span class="p">{</span>
+<span class="linenos"> 91</span>        <span class="s1">&#39;NAME&#39;</span><span class="p">:</span> <span class="s1">&#39;django.contrib.auth.password_validation.&#39;</span>
+<span class="linenos"> 92</span>                <span class="s1">&#39;CommonPasswordValidator&#39;</span>
+<span class="linenos"> 93</span>    <span class="p">},</span>
+<span class="linenos"> 94</span>    <span class="p">{</span>
+<span class="linenos"> 95</span>        <span class="s1">&#39;NAME&#39;</span><span class="p">:</span> <span class="s1">&#39;django.contrib.auth.password_validation.&#39;</span>
+<span class="linenos"> 96</span>                <span class="s1">&#39;NumericPasswordValidator&#39;</span>
+<span class="linenos"> 97</span>    <span class="p">},</span>
+<span class="linenos"> 98</span><span class="p">]</span>
+<span class="linenos"> 99</span>
+<span class="linenos">100</span><span class="c1"># Internationalization</span>
+<span class="linenos">101</span><span class="n">LANGUAGE_CODE</span> <span class="o">=</span> <span class="s1">&#39;en-us&#39;</span>
+<span class="linenos">102</span><span class="n">TIME_ZONE</span> <span class="o">=</span> <span class="s1">&#39;UTC&#39;</span>
+<span class="linenos">103</span><span class="n">USE_I18N</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="linenos">104</span><span class="n">USE_TZ</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="linenos">105</span>
+<span class="linenos">106</span><span class="c1"># Static files (CSS, JavaScript, Images)</span>
+<span class="linenos">107</span><span class="n">STATIC_URL</span> <span class="o">=</span> <span class="s1">&#39;static/&#39;</span>
+<span class="linenos">108</span>
+<span class="linenos">109</span><span class="c1"># Static files configuration for global static folder.</span>
+<span class="linenos">110</span><span class="c1"># This helps PyCharm resolve the &#39;css/style.css&#39; reference.</span>
+<span class="linenos">111</span><span class="n">STATICFILES_DIRS</span> <span class="o">=</span> <span class="p">[</span>
+<span class="linenos">112</span>    <span class="n">BASE_DIR</span> <span class="o">/</span> <span class="s2">&quot;static&quot;</span><span class="p">,</span>
+<span class="linenos">113</span><span class="p">]</span>
+<span class="linenos">114</span>
+<span class="linenos">115</span><span class="n">DEFAULT_AUTO_FIELD</span> <span class="o">=</span> <span class="s1">&#39;django.db.models.BigAutoField&#39;</span>
+<span class="linenos">116</span>
+<span class="linenos">117</span><span class="c1"># Authentication Redirects</span>
+<span class="linenos">118</span><span class="c1"># Users will be sent to the home page after login or logout.</span>
+<span class="linenos">119</span><span class="n">LOGIN_REDIRECT_URL</span> <span class="o">=</span> <span class="s1">&#39;article_list&#39;</span>
+<span class="linenos">120</span><span class="n">LOGOUT_REDIRECT_URL</span> <span class="o">=</span> <span class="s1">&#39;home&#39;</span>
+<span class="linenos">121</span><span class="c1"># This ensures Django knows where the custom login page is located.</span>
+<span class="linenos">122</span><span class="n">LOGIN_URL</span> <span class="o">=</span> <span class="s1">&#39;login&#39;</span>
+<span class="linenos">123</span>
+<span class="linenos">124</span><span class="c1"># Email Configuration for Development</span>
+<span class="linenos">125</span><span class="c1"># Emails will be printed to the standard output (console).</span>
+<span class="linenos">126</span><span class="n">EMAIL_BACKEND</span> <span class="o">=</span> <span class="s1">&#39;django.core.mail.backends.console.EmailBackend&#39;</span>
+<span class="linenos">127</span><span class="n">DEFAULT_FROM_EMAIL</span> <span class="o">=</span> <span class="s1">&#39;noreply@dispatch-django.com&#39;</span>
+<span class="linenos">128</span>
+<span class="linenos">129</span><span class="c1"># X (formerly Twitter) Application Programming Interface configuration.</span>
+<span class="linenos">130</span><span class="c1"># These credentials are required for the automated posting feature.</span>
+<span class="linenos">131</span><span class="c1"># Replace the placeholder strings with your actual keys from the X</span>
+<span class="linenos">132</span><span class="c1"># Developer Portal.</span>
+<span class="linenos">133</span><span class="c1"># noinspection SpellCheckingInspection</span>
+<span class="linenos">134</span><span class="n">X_API_KEY</span> <span class="o">=</span> <span class="s1">&#39;your-api-key-here&#39;</span>
+<span class="linenos">135</span><span class="c1"># noinspection SpellCheckingInspection</span>
+<span class="linenos">136</span><span class="n">X_API_SECRET_KEY</span> <span class="o">=</span> <span class="s1">&#39;your-api-secret-here&#39;</span>
+<span class="linenos">137</span>
+<span class="linenos">138</span><span class="c1"># New tokens for automated posting</span>
+<span class="linenos">139</span><span class="c1"># noinspection SpellCheckingInspection</span>
+<span class="linenos">140</span><span class="n">X_ACCESS_TOKEN</span> <span class="o">=</span> <span class="s1">&#39;your-access-token-here&#39;</span>
+<span class="linenos">141</span><span class="c1"># noinspection SpellCheckingInspection</span>
+<span class="linenos">142</span><span class="n">X_ACCESS_TOKEN_SECRET</span> <span class="o">=</span> <span class="s1">&#39;your-access-token-secret-here&#39;</span>
+<span class="linenos">143</span><span class="c1"># noinspection SpellCheckingInspection</span>
+<span class="linenos">144</span><span class="n">X_BEARER_TOKEN</span> <span class="o">=</span> <span class="s1">&#39;your-bearer-token-here&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="css-theme-file">
+<h1>CSS theme file<a class="headerlink" href="#css-theme-file" title="Link to this heading">¶</a></h1>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="linenos">  1</span><span class="c">/*</span>
+<span class="linenos">  2</span><span class="c">DispatchDjango Theme (VendorVerse Heritage):</span>
+<span class="linenos">  3</span><span class="c">Background: #402000 (Very Dark Brown)</span>
+<span class="linenos">  4</span><span class="c">Main Theme: #FF8000 (Vivid Orange)</span>
+<span class="linenos">  5</span><span class="c">Text:       #FFB000 (Light Orange/Gold)</span>
+<span class="linenos">  6</span><span class="c">Border:     #BF6000 (Darker Orange)</span>
+<span class="linenos">  7</span><span class="c">Bright:     #FFFF00 (Yellow)</span>
+<span class="linenos">  8</span><span class="c">*/</span>
+<span class="linenos">  9</span>
+<span class="linenos"> 10</span><span class="c">/* Global &amp; Input Scrollbar Styling */</span>
+<span class="linenos"> 11</span><span class="o">*</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 12</span><span class="w">    </span><span class="k">scrollbar-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#BF6000</span><span class="w"> </span><span class="mh">#402000</span><span class="p">;</span>
+<span class="linenos"> 13</span><span class="w">    </span><span class="k">scrollbar-width</span><span class="p">:</span><span class="w"> </span><span class="kc">thin</span><span class="p">;</span>
+<span class="linenos"> 14</span><span class="p">}</span>
+<span class="linenos"> 15</span>
+<span class="linenos"> 16</span><span class="c">/* For Chrome, Edge, and Safari */</span>
+<span class="linenos"> 17</span><span class="p">::</span><span class="nd">-webkit-scrollbar</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 18</span><span class="w">    </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+<span class="linenos"> 19</span><span class="w">    </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+<span class="linenos"> 20</span><span class="p">}</span>
+<span class="linenos"> 21</span>
+<span class="linenos"> 22</span><span class="p">::</span><span class="nd">-webkit-scrollbar-track</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 23</span><span class="w">    </span><span class="k">background</span><span class="p">:</span><span class="w"> </span><span class="mh">#402000</span><span class="p">;</span>
+<span class="linenos"> 24</span><span class="p">}</span>
+<span class="linenos"> 25</span>
+<span class="linenos"> 26</span><span class="p">::</span><span class="nd">-webkit-scrollbar-thumb</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 27</span><span class="w">    </span><span class="k">background</span><span class="p">:</span><span class="w"> </span><span class="mh">#BF6000</span><span class="p">;</span>
+<span class="linenos"> 28</span><span class="w">    </span><span class="k">border-radius</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="kt">px</span><span class="p">;</span>
+<span class="linenos"> 29</span><span class="p">}</span>
+<span class="linenos"> 30</span>
+<span class="linenos"> 31</span><span class="p">::</span><span class="nd">-webkit-scrollbar-thumb</span><span class="p">:</span><span class="nd">hover</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 32</span><span class="w">    </span><span class="k">background</span><span class="p">:</span><span class="w"> </span><span class="mh">#FF8000</span><span class="p">;</span>
+<span class="linenos"> 33</span><span class="p">}</span>
+<span class="linenos"> 34</span>
+<span class="linenos"> 35</span><span class="nt">body</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 36</span><span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#402000</span><span class="p">;</span>
+<span class="linenos"> 37</span><span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#FFB000</span><span class="p">;</span>
+<span class="linenos"> 38</span><span class="w">    </span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Segoe UI&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">Tahoma</span><span class="p">,</span><span class="w"> </span><span class="n">Geneva</span><span class="p">,</span><span class="w"> </span><span class="n">Verdana</span><span class="p">,</span><span class="w"> </span><span class="kc">sans-serif</span><span class="p">;</span>
+<span class="linenos"> 39</span><span class="w">    </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="linenos"> 40</span><span class="w">    </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="linenos"> 41</span><span class="p">}</span>
+<span class="linenos"> 42</span>
+<span class="linenos"> 43</span><span class="nt">header</span><span class="o">,</span><span class="w"> </span><span class="nt">nav</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 44</span><span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#4D2600</span><span class="p">;</span>
+<span class="linenos"> 45</span><span class="w">    </span><span class="k">border-bottom</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="mh">#BF6000</span><span class="p">;</span>
+<span class="linenos"> 46</span><span class="w">    </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
+<span class="linenos"> 47</span><span class="p">}</span>
+<span class="linenos"> 48</span>
+<span class="linenos"> 49</span><span class="nt">h1</span><span class="o">,</span><span class="w"> </span><span class="nt">h2</span><span class="o">,</span><span class="w"> </span><span class="nt">h3</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 50</span><span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#FF8000</span><span class="p">;</span>
+<span class="linenos"> 51</span><span class="p">}</span>
+<span class="linenos"> 52</span>
+<span class="linenos"> 53</span><span class="nt">main</span><span class="o">,</span><span class="w"> </span><span class="p">.</span><span class="nc">container</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 54</span><span class="w">    </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
+<span class="linenos"> 55</span><span class="w">    </span><span class="k">max-width</span><span class="p">:</span><span class="w"> </span><span class="mi">1200</span><span class="kt">px</span><span class="p">;</span>
+<span class="linenos"> 56</span><span class="w">    </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="kc">auto</span><span class="p">;</span>
+<span class="linenos"> 57</span><span class="p">}</span>
+<span class="linenos"> 58</span>
+<span class="linenos"> 59</span><span class="p">.</span><span class="nc">card</span><span class="o">,</span><span class="w"> </span><span class="p">.</span><span class="nc">article-card</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 60</span><span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#4D2600</span><span class="p">;</span>
+<span class="linenos"> 61</span><span class="w">    </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="mh">#BF6000</span><span class="p">;</span>
+<span class="linenos"> 62</span><span class="w">    </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
+<span class="linenos"> 63</span><span class="w">    </span><span class="k">margin-bottom</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
+<span class="linenos"> 64</span><span class="w">    </span><span class="k">border-radius</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="kt">px</span><span class="p">;</span>
+<span class="linenos"> 65</span><span class="p">}</span>
+<span class="linenos"> 66</span>
+<span class="linenos"> 67</span><span class="nt">button</span><span class="o">,</span><span class="w"> </span><span class="p">.</span><span class="nc">btn</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 68</span><span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#FF8000</span><span class="p">;</span>
+<span class="linenos"> 69</span><span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#402000</span><span class="p">;</span>
+<span class="linenos"> 70</span><span class="w">    </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="mh">#BF6000</span><span class="p">;</span>
+<span class="linenos"> 71</span><span class="w">    </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="kt">px</span><span class="w"> </span><span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
+<span class="linenos"> 72</span><span class="w">    </span><span class="k">cursor</span><span class="p">:</span><span class="w"> </span><span class="kc">pointer</span><span class="p">;</span>
+<span class="linenos"> 73</span><span class="w">    </span><span class="k">font-weight</span><span class="p">:</span><span class="w"> </span><span class="kc">bold</span><span class="p">;</span>
+<span class="linenos"> 74</span><span class="w">    </span><span class="k">text-transform</span><span class="p">:</span><span class="w"> </span><span class="kc">uppercase</span><span class="p">;</span>
+<span class="linenos"> 75</span><span class="w">    </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">inline-block</span><span class="p">;</span>
+<span class="linenos"> 76</span><span class="w">    </span><span class="k">text-decoration</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;</span>
+<span class="linenos"> 77</span><span class="p">}</span>
+<span class="linenos"> 78</span>
+<span class="linenos"> 79</span><span class="nt">button</span><span class="p">:</span><span class="nd">hover</span><span class="o">,</span><span class="w"> </span><span class="p">.</span><span class="nc">btn</span><span class="p">:</span><span class="nd">hover</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 80</span><span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#FFFF00</span><span class="w"> </span><span class="cp">!important</span><span class="p">;</span>
+<span class="linenos"> 81</span><span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#402000</span><span class="w"> </span><span class="cp">!important</span><span class="p">;</span>
+<span class="linenos"> 82</span><span class="w">    </span><span class="k">text-decoration</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;</span>
+<span class="linenos"> 83</span><span class="p">}</span>
+<span class="linenos"> 84</span>
+<span class="linenos"> 85</span><span class="nt">input</span><span class="o">,</span><span class="w"> </span><span class="nt">textarea</span><span class="o">,</span><span class="w"> </span><span class="nt">select</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 86</span><span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#593000</span><span class="p">;</span>
+<span class="linenos"> 87</span><span class="w">    </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="mh">#BF6000</span><span class="p">;</span>
+<span class="linenos"> 88</span><span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#FFFF00</span><span class="p">;</span>
+<span class="linenos"> 89</span><span class="w">    </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+<span class="linenos"> 90</span><span class="w">    </span><span class="k">margin-bottom</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+<span class="linenos"> 91</span><span class="w">    </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+<span class="linenos"> 92</span><span class="w">    </span><span class="k">box-sizing</span><span class="p">:</span><span class="w"> </span><span class="kc">border-box</span><span class="p">;</span>
+<span class="linenos"> 93</span><span class="w">    </span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="kc">inherit</span><span class="p">;</span>
+<span class="linenos"> 94</span><span class="w">    </span><span class="k">color-scheme</span><span class="p">:</span><span class="w"> </span><span class="n">dark</span><span class="p">;</span><span class="w"> </span><span class="c">/* Helps browsers choose dark system colors */</span>
+<span class="linenos"> 95</span><span class="p">}</span>
+<span class="linenos"> 96</span>
+<span class="linenos"> 97</span><span class="c">/*</span>
+<span class="linenos"> 98</span><span class="c">   Placeholder / Hint text styling.</span>
+<span class="linenos"> 99</span><span class="c">   This changes the default grey text to match your theme&#39;s</span>
+<span class="linenos">100</span><span class="c">   muted orange border color.</span>
+<span class="linenos">101</span><span class="c">*/</span>
+<span class="linenos">102</span><span class="nt">input</span><span class="p">::</span><span class="nd">placeholder</span><span class="o">,</span>
+<span class="linenos">103</span><span class="nt">textarea</span><span class="p">::</span><span class="nd">placeholder</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">104</span><span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#BF6000</span><span class="p">;</span>
+<span class="linenos">105</span><span class="w">    </span><span class="k">opacity</span><span class="p">:</span><span class="w"> </span><span class="mf">0.8</span><span class="p">;</span><span class="w"> </span><span class="c">/* Ensures it looks like a hint and not final text */</span>
+<span class="linenos">106</span><span class="p">}</span>
+<span class="linenos">107</span>
+<span class="linenos">108</span><span class="c">/* Text selection styling to match VendorVerse theme */</span>
+<span class="linenos">109</span><span class="p">::</span><span class="nd">selection</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">110</span><span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#FF8000</span><span class="w"> </span><span class="cp">!important</span><span class="p">;</span><span class="w"> </span><span class="c">/* Vivid Orange background */</span>
+<span class="linenos">111</span><span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#402000</span><span class="w"> </span><span class="cp">!important</span><span class="p">;</span><span class="w">            </span><span class="c">/* Very Dark Brown text */</span>
+<span class="linenos">112</span><span class="p">}</span>
+<span class="linenos">113</span>
+<span class="linenos">114</span><span class="p">::</span><span class="nd">-moz-selection</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">115</span><span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#FF8000</span><span class="w"> </span><span class="cp">!important</span><span class="p">;</span><span class="w"> </span><span class="c">/* For Firefox */</span>
+<span class="linenos">116</span><span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#402000</span><span class="w"> </span><span class="cp">!important</span><span class="p">;</span>
+<span class="linenos">117</span><span class="p">}</span>
+<span class="linenos">118</span>
+<span class="linenos">119</span><span class="nt">select</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">120</span><span class="w">    </span><span class="c">/* This tells the browser to use a dark theme for system elements */</span>
+<span class="linenos">121</span><span class="w">    </span><span class="k">color-scheme</span><span class="p">:</span><span class="w"> </span><span class="n">dark</span><span class="p">;</span>
+<span class="linenos">122</span><span class="w">    </span><span class="c">/* This influences the checkbox/radio/select highlight colors */</span>
+<span class="linenos">123</span><span class="w">    </span><span class="k">accent-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#FF8000</span><span class="w"> </span><span class="cp">!important</span><span class="p">;</span>
+<span class="linenos">124</span><span class="w">    </span><span class="k">cursor</span><span class="p">:</span><span class="w"> </span><span class="kc">pointer</span><span class="p">;</span>
+<span class="linenos">125</span><span class="p">}</span>
+<span class="linenos">126</span>
+<span class="linenos">127</span><span class="c">/* Ensure the select dropdown elements also match the theme */</span>
+<span class="linenos">128</span><span class="nt">select</span><span class="w"> </span><span class="nt">option</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">129</span><span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#402000</span><span class="w"> </span><span class="cp">!important</span><span class="p">;</span>
+<span class="linenos">130</span><span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#FFB000</span><span class="w"> </span><span class="cp">!important</span><span class="p">;</span>
+<span class="linenos">131</span><span class="w">    </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+<span class="linenos">132</span><span class="p">}</span>
+<span class="linenos">133</span>
+<span class="linenos">134</span><span class="c">/*</span>
+<span class="linenos">135</span><span class="c">   Hover/Checked Override:</span>
+<span class="linenos">136</span><span class="c">   We use a massive inset shadow to cover the system blue.</span>
+<span class="linenos">137</span><span class="c">   We also use text-shadow to ensure text remains dark brown</span>
+<span class="linenos">138</span><span class="c">   even if the system tries to force it to white.</span>
+<span class="linenos">139</span><span class="c">*/</span>
+<span class="linenos">140</span><span class="nt">select</span><span class="w"> </span><span class="nt">option</span><span class="p">:</span><span class="nd">hover</span><span class="o">,</span>
+<span class="linenos">141</span><span class="nt">select</span><span class="w"> </span><span class="nt">option</span><span class="p">:</span><span class="nd">focus</span><span class="o">,</span>
+<span class="linenos">142</span><span class="nt">select</span><span class="w"> </span><span class="nt">option</span><span class="p">:</span><span class="nd">checked</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">143</span><span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#FF8000</span><span class="w"> </span><span class="cp">!important</span><span class="p">;</span>
+<span class="linenos">144</span><span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#402000</span><span class="w"> </span><span class="cp">!important</span><span class="p">;</span>
+<span class="linenos">145</span><span class="w">    </span><span class="k">box-shadow</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">10</span><span class="kt">px</span><span class="w"> </span><span class="mi">1000</span><span class="kt">px</span><span class="w"> </span><span class="mh">#FF8000</span><span class="w"> </span><span class="kc">inset</span><span class="w"> </span><span class="cp">!important</span><span class="p">;</span>
+<span class="linenos">146</span><span class="w">    </span><span class="k">text-shadow</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mh">#402000</span><span class="w"> </span><span class="cp">!important</span><span class="p">;</span>
+<span class="linenos">147</span><span class="p">}</span>
+<span class="linenos">148</span>
+<span class="linenos">149</span><span class="c">/* Focus state for the dropdown */</span>
+<span class="linenos">150</span><span class="nt">input</span><span class="p">:</span><span class="nd">focus</span><span class="o">,</span>
+<span class="linenos">151</span><span class="nt">textarea</span><span class="p">:</span><span class="nd">focus</span><span class="o">,</span>
+<span class="linenos">152</span><span class="nt">select</span><span class="p">:</span><span class="nd">focus</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">153</span><span class="w">    </span><span class="k">outline</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;</span>
+<span class="linenos">154</span><span class="w">    </span><span class="k">border-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#FFFF00</span><span class="w"> </span><span class="cp">!important</span><span class="p">;</span>
+<span class="linenos">155</span><span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#663300</span><span class="w"> </span><span class="cp">!important</span><span class="p">;</span>
+<span class="linenos">156</span><span class="p">}</span>
+<span class="linenos">157</span>
+<span class="linenos">158</span><span class="nt">label</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">159</span><span class="w">    </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">block</span><span class="p">;</span>
+<span class="linenos">160</span><span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#FF8000</span><span class="p">;</span>
+<span class="linenos">161</span><span class="w">    </span><span class="k">font-weight</span><span class="p">:</span><span class="w"> </span><span class="kc">bold</span><span class="p">;</span>
+<span class="linenos">162</span><span class="w">    </span><span class="k">margin-bottom</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="kt">px</span><span class="p">;</span>
+<span class="linenos">163</span><span class="w">    </span><span class="k">margin-top</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="kt">px</span><span class="p">;</span>
+<span class="linenos">164</span><span class="p">}</span>
+<span class="linenos">165</span>
+<span class="linenos">166</span><span class="nt">hr</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">167</span><span class="w">    </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="linenos">168</span><span class="w">    </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">px</span><span class="p">;</span>
+<span class="linenos">169</span><span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#BF6000</span><span class="p">;</span>
+<span class="linenos">170</span><span class="w">    </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="kt">px</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="linenos">171</span><span class="p">}</span>
+<span class="linenos">172</span>
+<span class="linenos">173</span><span class="nt">a</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">174</span><span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#FF8000</span><span class="p">;</span>
+<span class="linenos">175</span><span class="w">    </span><span class="k">text-decoration</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;</span>
+<span class="linenos">176</span><span class="p">}</span>
+<span class="linenos">177</span>
+<span class="linenos">178</span><span class="nt">a</span><span class="p">:</span><span class="nd">hover</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">179</span><span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#FFFF00</span><span class="p">;</span>
+<span class="linenos">180</span><span class="p">}</span>
+</pre></div>
+</div>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Dispatch Django</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup.html">Setup (Development)</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Settings reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#css-theme-file">CSS theme file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="templates_static.html">Templates and Static Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">dispatch_app</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="setup.html" title="previous chapter">Setup (Development)</a></li>
+      <li>Next: <a href="templates_static.html" title="next chapter">Templates and Static Files</a></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 9.1.0</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="_sources/config.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -3,6 +3,7 @@ Django settings for the DispatchDjango project.
 Provides configuration for database, security, and application modules.
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -61,24 +62,30 @@ TEMPLATES = [
 WSGI_APPLICATION = 'dispatch_core.wsgi.application'
 
 # Database configuration
-# The project has been configured to use MariaDB
-# instead of the default SQLite.
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'dispatch_db',
-        'USER': 'dispatch_admin',
-        'PASSWORD': 'DispatchPass2025!',
-        'HOST': '127.0.0.1',
-        'PORT': '3306',
-        'OPTIONS': {
-            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
-        },
+# SQLite for Docker and MariaDB by default.
+USE_SQLITE = os.environ.get("USE_SQLITE") == "1"
+
+if USE_SQLITE:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
     }
-}
-# Inner admin account
-# dispatch_admin
-# DispatchAdminSecure789!
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'dispatch_db',
+            'USER': 'dispatch_admin',
+            'PASSWORD': '***********',
+            'HOST': '127.0.0.1',
+            'PORT': '3306',
+            'OPTIONS': {
+                'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+            },
+        }
+    }
 
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [
