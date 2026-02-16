@@ -1,0 +1,4 @@
+GitHub Repository:
+https://github.com/hbarudi/dispatch-django-capstone
+
+Default branch: master
