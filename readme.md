@@ -135,24 +135,3 @@ python manage.py test dispatch_app.unit_tests
 ```
 
 ---
-
-## Project Updated:
-* CRUD support for articles and newsletters for journalists.
-* Publisher flow: editors create publishers, and editors/journalists can join.
-
-**Built by Hashem Barudi as part of the HyperionDev Django News Application Capstone Project.**
-
-## Documentation (Sphinx)
-This project includes developer documentation generated with Sphinx.
-
-### Build the docs locally (HTML)
-From the project root:
-```bash
-cd docs
-.\make.bat html
-``` 
-
-Then open:
-
-- `docs/build/html/index.html`
-
